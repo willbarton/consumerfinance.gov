@@ -54,13 +54,9 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../running-docker/">Running in Docker</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../running-k8s/">Running in Kubernetes</a>
-                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../running-docs/">Running documentation site locally</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../debugging-monitoring/">Debugging and Monitoring</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../deployment/">Artifacts and Deployment</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Pages and Components</span></p>
@@ -147,8 +143,6 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../consumer-complaint-database/">Consumer Complaints</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../housing-counselor-tool/">Find a Housing Counselor Tool</a>
-                  </li>
               </ul>
       </div>
     </div>
@@ -207,7 +201,7 @@ ready to be served by Django.</p>
   <code>yarn cache clean</code>.</li>
 </ul>
 <h2 id="watching-files-for-changes">Watching files for changes<a class="headerlink" href="#watching-files-for-changes" title="Permanent link">¶</a></h2>
-<p>Some (but not all) JavaScript and CSS files can be rebuilt automatically when they are changed by using <code>yarn watch</code>.</p>
+<p>Any JavaScript or SASS file that is included as an entrypoint in esbuild can automatically trigger rebuilds with <code>yarn watch</code>.</p>
 <h2 id="developing-on-nested-satellite-apps">Developing on nested satellite apps<a class="headerlink" href="#developing-on-nested-satellite-apps" title="Permanent link">¶</a></h2>
 <p>Some projects can sit inside consumerfinance.gov, but manage their own asset
 dependencies. These projects have their own <code>package.json</code> and base templates.</p>

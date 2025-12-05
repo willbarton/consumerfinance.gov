@@ -70,13 +70,9 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../running-docker/">Running in Docker</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../running-k8s/">Running in Kubernetes</a>
-                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../running-docs/">Running documentation site locally</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../debugging-monitoring/">Debugging and Monitoring</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../deployment/">Artifacts and Deployment</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Pages and Components</span></p>
@@ -142,8 +138,6 @@
                   <li class="toctree-l1"><a class="reference internal" href="../ask-cfpb/">Ask CFPB</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../consumer-complaint-database/">Consumer Complaints</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../housing-counselor-tool/">Find a Housing Counselor Tool</a>
                   </li>
               </ul>
       </div>
@@ -262,18 +256,19 @@ to assist developers with linting without thinking.</p>
 <h3 id="build-the-frontend">Build the frontend<a class="headerlink" href="#build-the-frontend" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Our frontend requires <a href="https://nodejs.org/en/">Node.js 20</a>
+<p>Our frontend requires <a href="https://nodejs.org/en/">Node</a>
 with
 <a href="https://yarnpkg.com/">Yarn</a>.
 We prefer
 <a href="https://github.com/nvm-sh/nvm">nvm</a>
 for Node.js version management.
-nvm can be installed using:</p>
+The latest stable Node.js release is published <a href="https://nodejs.org/en/about/previous-releases#nodejs-releases">here</a>.</p>
+<p>nvm can be installed using:</p>
 <pre class="highlight"><code class="language-sh">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | sh</code></pre>
 <p>Node must then be installed once nvm is installed:</p>
-<pre class="highlight"><code class="language-sh">nvm install 20</code></pre>
+<pre class="highlight"><code class="language-sh">nvm install stable</code></pre>
 <p>Node can then be used in any sh using:</p>
-<pre class="highlight"><code class="language-sh">nvm use 20</code></pre>
+<pre class="highlight"><code class="language-sh">nvm use stable</code></pre>
 <p>Yarn must then be installed:</p>
 <pre class="highlight"><code class="language-sh">curl -o- -L https://yarnpkg.com/install.sh | sh</code></pre>
 </div>
@@ -307,10 +302,6 @@ and then does the following:</p>
 <li>Updates the default Wagtail site to use the port defined by the
   <code>DJANGO_HTTP_PORT</code> environment variable, if defined; otherwise this port is
   set to 80.</li>
-<li>If it doesn't already exist, creates a new
-  <a href="https://github.com/cfpb/wagtail-sharing">wagtail-sharing</a> <code>SharingSite</code> with
-  a hostname and port defined by the <code>WAGTAIL_SHARING_HOSTNAME</code> and
-  <code>DJANGO_HTTP_PORT</code> environment variables.</li>
 </ul>
 <p>This script must be run inside the Docker <code>python</code> container:</p>
 <pre class="highlight"><code class="language-sh">docker-compose exec python sh

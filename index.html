@@ -70,13 +70,9 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="running-docker/">Running in Docker</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="running-k8s/">Running in Kubernetes</a>
-                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="running-docs/">Running documentation site locally</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="debugging-monitoring/">Debugging and Monitoring</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="deployment/">Artifacts and Deployment</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Pages and Components</span></p>
@@ -143,8 +139,6 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="consumer-complaint-database/">Consumer Complaints</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="housing-counselor-tool/">Find a Housing Counselor Tool</a>
-                  </li>
               </ul>
       </div>
     </div>
@@ -182,7 +176,7 @@
 <li><a href="https://docs.python.org/3.8/">Python 3.8</a> and <a href="https://pip.pypa.io/en/stable/user_guide/">pip (Python package manager)</a></li>
 <li><a href="https://jinja.palletsprojects.com/">Jinja2 templates</a> for front-end rendering. See <a href="https://github.com/cfpb/consumerfinance.gov/tree/main/requirements/libraries.txt"><code>requirements/libraries.txt</code></a> for version.</li>
 <li><a href="https://wagtail.io">Wagtail CMS</a> for content administration. See <a href="https://github.com/cfpb/consumerfinance.gov/tree/main/requirements/wagtail.txt"><code>requirements/wagtail.txt</code></a> for version.</li>
-<li><a href="https://www.postgresql.org/">PostgreSQL 13.13</a> is the database we use in production and locally.</li>
+<li><a href="https://www.postgresql.org/">PostgreSQL 17</a> is the database we use in production and locally.</li>
 <li><a href="https://www.psycopg.org/">Psycopg</a> is the Python library that lets Python talk to Postgres. See <a href="https://github.com/cfpb/consumerfinance.gov/tree/main/requirements/libraries.txt"><code>requirements/libraries.txt</code></a> for current version.</li>
 <li>Additional dependencies, listed below.</li>
 </ul>
@@ -202,12 +196,11 @@
 <ul>
 <li><code>base.txt</code>: shortcut for <code>django.txt</code> + <code>wagtail.txt</code> + <code>libraries.txt</code></li>
 <li><code>ci.txt</code>: specific requirements for the continuous integration environment. Should/could be moved to CI configuration files?</li>
-<li><code>deployment.txt</code>: requirements for deployment, includes <code>base.txt</code> and a New Relic library that we don't install anywhere else.</li>
+<li><code>deployment.txt</code>: requirements for deployment via container, includes <code>base.txt</code>, Gunicorn, and a New Relic library that we don't install anywhere else.</li>
 <li><code>django.txt</code>: specifies the Django version. The file is used when running the site, but by having it separate we can test against other versions of Django by excluding this file.</li>
 <li><code>docs.txt</code>: requirements to build the consumerfinance.gov docs.</li>
 <li><code>libraries.txt</code>: Python libraries.</li>
 <li><code>local.txt</code>: includes <code>base.txt</code> and some useful libraries when developing locally.</li>
-<li><code>scripts.txt</code>: Requirements for running certain jobs on Jenkins, so scripts can run in Jenkins without having to install all the other requirements.</li>
 <li><code>test.txt</code>: requirements for running Python tests.</li>
 <li><code>wagtail.txt</code>: specifies Wagtail version. In its own file to make it easier to test multiple versions, same as with <code>django.txt</code>.</li>
 </ul>
@@ -263,5 +256,5 @@
 
 <!--
 MkDocs version : 1.5.3
-Build Date UTC : 2025-04-17 21:38:30.986355+00:00
+Build Date UTC : 2025-12-05 01:31:19.878459+00:00
 -->
